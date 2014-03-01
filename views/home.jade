@@ -1,0 +1,11 @@
+extends layout
+
+block header
+  h4 Welcome to TempAgent!
+  p.sub How would you like to get started?
+  form(action='/templates', style='display:inline')
+    input(class='btn btn-primary', type='submit', value='Manage templates.')
+  form(action='/data', style='display:inline')
+    input(class='btn btn-primary', type='submit', value='Manage data.')
+  form(action='/generator', style='display:inline')
+    input(class='btn btn-primary', type='submit', value='Generate a document.')

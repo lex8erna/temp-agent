@@ -1,0 +1,44 @@
+doctype html
+html
+  head
+    title TempAgent
+    //link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Montserrat')
+    //link(rel='stylesheet', type='text/css', href='http://fonts.googleapis.com/css?family=Titillium+Web')
+    // Bootstrap things
+    //link(rel='stylesheet', href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css')
+    link(rel='stylesheet', href='/bootstrap-3.1.1-dist/css/bootstrap.min.css')
+    //link(rel='stylesheet', href='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap-theme.min.css')
+    // Latest compiled and minified JavaScript
+    link(rel='stylesheet', href='/stylesheets/style.css')
+    // script(src='http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js')
+    script(src='/jQuery/jquery-1.11.0.min.js')
+    // script(src='http://netdna.bootstrapcdn.com/bootstrap/3.1.1/js/bootstrap.min.js')
+    script(src='/bootstrap-3.1.1-dist/js/bootstrap.min.js')
+
+  body
+    // The router (index.js) sets the current page variable (navig) to the name of the current page.
+    mixin toggleli(page)
+      if navig == page
+        li.active
+          block
+      else
+        li
+          block
+
+    .navbar.navbar-default(role='navigation')
+      .container-fluid
+        .navbar-header
+          a.navbar-brand(href='/', style='font-size:2em') TempAgent
+        .navbar-collapse.collapse
+          ul.nav.navbar-nav
+            +toggleli('home')
+              a(href='/home') Home
+            +toggleli('templates')
+              a(href='/templates') Templates
+            +toggleli('data')
+              a(href='/data') Data
+            +toggleli('generator')
+              a(href='/generator') Generator
+    header
+      block header
+    block content

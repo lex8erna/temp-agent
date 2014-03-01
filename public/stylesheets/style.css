@@ -1,0 +1,80 @@
+body {
+	/*padding-left: 1em;*/
+  font: 14px "Montserrat", Helvetica, Arial, sans-serif;
+	/* Nice bluish background
+  background-color: rgb(230,232,250);
+  */
+  /* New background */
+  background-color: #BBE2BC;
+}
+
+a {
+	color: #00B7FF;
+}
+
+h4 {
+  font-size:1.5em;
+  color:#7E9F4D;
+}
+
+p {
+  color:#7E9F4D;
+}
+
+p.sub {
+  color:#9CBD6B;
+}
+
+header {
+	box-shadow: 0px 5px 5px #888888;
+  padding: 1em 1em 1em 1em;
+  font: 14px "Montserrat", Helvetica, Arial, sans-serif;
+
+	/* IE10 Consumer Preview */ 
+	background-image: -ms-linear-gradient(top, #FFFFFF 0%, #D9D9D9 250%);
+
+	/* Mozilla Firefox */ 
+	background-image: -moz-linear-gradient(top, #FFFFFF 0%, #D9D9D9 250%);
+
+	/* Opera */ 
+	background-image: -o-linear-gradient(top, #FFFFFF 0%, #D9D9D9 250%);
+
+	/* Webkit (Safari/Chrome 10) */ 
+	background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #FFFFFF), color-stop(1, #D9D9D9));
+
+	/* Webkit (Chrome 11+) */ 
+	background-image: -webkit-linear-gradient(top, #FFFFFF 0%, #D9D9D9 250%);
+
+	/* W3C Markup, IE10 Release Preview */ 
+	background-image: linear-gradient(to bottom, #FFFFFF 0%, #D9D9D9 250%);
+
+	/* animation things
+	-moz-animation-name: fadeHeader;
+    -moz-animation-iteration-count: once;
+    -moz-animation-timing-function: ease-in;
+    -moz-animation-duration: 1s;
+
+    -webkit-animation-name: fadeHeader;
+    -webkit-animation-iteration-count: once;
+    -webkit-animation-timing-function: ease-in;
+    -webkit-animation-duration: 1s;
+  */
+}
+
+/* Testing animation viability */
+@-moz-keyframes fadeHeader {
+    0% {
+		color:silver;
+    }
+    100% {
+		color:#000000;
+    }
+}
+@-webkit-keyframes fadeHeader {
+    0% {
+		color:silver;
+    }
+    100% {
+		color:#000000;
+    }
+}
