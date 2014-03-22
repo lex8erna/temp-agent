@@ -1,4 +1,13 @@
 extends layout
 
 block header
-  h4 Template Manager
+  h4 Template Manager {{keys}}
+  div(ng-show="templateSelectMode")
+    p.sub Select one of the templates below to edit.
+  div(ng-show="templateAddMode")
+    p.sub Select one of the templates below.
+  div(ng-show="templateEditMode")
+    p.sub Paste your template into the text area below. Enclose your 
+      span(ng-non-bindable) {{fields}}
+      |  in curly braces.
+    textarea.col-md-12(id="templateField", ng-model="templates[selectedTemplate].body", ng-change="updateTemplate(selectedTemplate)")

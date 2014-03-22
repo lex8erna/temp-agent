@@ -1,4 +1,34 @@
 extends layout
-
+//block scripts
 block header
-  h4 Generator
+  div.col-md-12(id="viewCPanel")
+    h4 View Options
+    div(class="btn-group", data-toggle="buttons-checkbox")
+      button(type="button", ng-model="previewOn", class="btn btn-info")
+        | Preview
+      button(type="button", ng-model="templateOn", class="btn btn-info")
+        | Template
+      button(type="button", ng-model="fieldOn", class="btn btn-info")
+        | Fields
+    div(class="btn-group", data-toggle="buttons-checkbox")
+      button(type="button", ng-model="fullPageMode", class="btn btn-info")
+        | Full Page Preview
+  div.col-md-12(ng-hide="loaded")
+    h4 Loading active template...
+  div.col-md-12(ng-show="loaded")
+    div.col-md-12(ng-show="fullPageMode")
+      h4 Full Page Preview
+      div(id="fullPreview")
+    div.col-md-12(ng-hide="fullPageMode")
+      div.col-md-4(id="previewDiv", ng-show="previewOn")
+        h4 Preview
+        div(id="preview", ng-show="previewOn")
+      div.col-md-4(id="templateDiv", ng-show="templateOn")
+        h4 Template
+        textarea.col-md-12(id="templateField", type="textarea", ng-model="templates[selectedTemplate].body", ng-change="updateFields()", disabled)
+      div.col-md-4(id="fieldDiv", ng-show="fieldOn")
+        h4 Form fields
+        span(ng-repeat='field in fields')
+          h4 {{field.name}}
+          textarea.col-md-12(type="textarea", ng-model="field.val", ng-change="updateTemplateView()")
+            | {{fields[field[0]]}}

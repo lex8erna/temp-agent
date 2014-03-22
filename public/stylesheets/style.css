@@ -8,6 +8,10 @@ body {
   background-color: #BBE2BC;
 }
 
+textarea{
+  resize:vertical;
+}
+
 a {
 	color: #00B7FF;
 }
